@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Subcategory {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

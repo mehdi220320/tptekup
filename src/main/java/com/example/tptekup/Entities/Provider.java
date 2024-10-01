@@ -11,6 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 public class Provider extends User{
-    private String adress;
-    private String city;
+    private String matricule;
+    private String service;
+    private String company;
 }
