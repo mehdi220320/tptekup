@@ -5,13 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private double price;
@@ -19,4 +21,8 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "id_provider")
     private Provider provider;
+    @ManyToMany(mappedBy = "productList")
+    List<Ordeer> orderList;
+    @OneToMany(mappedBy = "product",cascade = CascadeType.REMOVE)
+    List<Subcategory>subcategoryList;
 }

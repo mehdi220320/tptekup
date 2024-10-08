@@ -18,4 +18,7 @@ public class Subcategory {
     @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
+    @ManyToOne
+    @JoinColumn(name = "id_product")
+    private Product product;
 }
